@@ -1,3 +1,7 @@
 FROM ubuntu:22.04
-ADD /app/index.html /
+
+FROM nginx
+COPY /app/ /usr/share/nginx/html
+#WORKDIR /app
+#COPY . /app
 EXPOSE 8080
