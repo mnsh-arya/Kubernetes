@@ -1,0 +1,60 @@
+1  apt-get update
+2  halt
+3  FILE=/ks/wait-background.sh; while ! test -f ${FILE}; do clear; sleep 0.1; done; bash ${FILE}
+4  mkdir workspace
+5  cd workspace/
+6  ll
+7  wget https://www.free-css.com/assets/files/free-css-templates/download/page296/carvilla.zip
+8  ll
+9  unzip carvilla.zip 
+10  ll
+11  rm -rf carvilla.zip 
+12  ll
+13  cd carvilla-v1.0/
+14  ll
+15  rm -f readme.txt 
+16  ll
+17  cd ..
+18  ll
+19  mv carvilla-v1.0/ app/
+20  ll
+21  vi Dockerfile
+22  docker build -t myapp .
+23  ll
+24  docker images
+25  ll
+26  vi Deployment.yaml
+27  vim Sevice.yaml
+28  ll
+29  kubectl apply -f Deployment.yaml 
+30  kubectl apply -f Sevice.yaml 
+31  kubectl get deployments
+32  kubectl get service
+33  kubectl get services
+34  kubectl get pods
+35  kubectl describe pod
+36  docker images
+37  vi Deployment.yaml
+38  kubectl apply -f Deployment.yaml 
+39  kubectl apply -f Sevice.yaml 
+40  kubectl get pods
+41  docker build -t mnsharya/myapp:latest .
+42  docker images
+43  docker push mnsharya/myapp:latest
+44  docker build -t mnsharya/k8s:latest .
+45  docker push mnsharya/k8s:latest
+46  docker login
+47  docker images
+48  docker push mnsharya/myapp:latest
+49  ll
+50  vi Deployment.yaml 
+51  kubectl apply -f Deployment.yaml 
+52  kubectl get pods
+53  cat Deployment.yaml 
+54  kubectl get pods
+55  kubectl get serveices
+56  kubectl get service
+57  curl http://10.103.162.34
+
+
+
