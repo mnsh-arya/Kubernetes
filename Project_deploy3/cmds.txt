@@ -1,0 +1,94 @@
+    1  apt-get update
+    2  halt
+    3  FILE=/ks/wait-background.sh; while ! test -f ${FILE}; do clear; sleep 0.1; done; bash ${FILE}
+    4  mkdir workspace
+    5  cd workspace/
+    6  git clone https://github.com/mnsh-arya/Kubernetes.git
+    7  cd Kubernetes/
+    8  cd Project_deploy
+    9  cd ../Project_deploy3
+   10  ll
+   11  vi srv.yaml
+   12  kubectl appy -f namespace.yaml 
+   13  kubectl apply -f namespace.yaml 
+   14  cat Deployment.yaml 
+   15  vi srv.yaml 
+   16  kubectl apply -f srv.yaml 
+   17  vi srv.yaml 
+   18  kubectl apply -f srv.yaml 
+   19  cat srv.yaml 
+   20  kubectl apply -f Deployment.yaml 
+   21  kubectl get pods -o wide
+   22  kubectl get pods -n manish-namespace -o wide
+   23  kubectl get pods -n manish-namespace -o wide --show-labels
+   24  kubectl describe service/myapp-service
+   25  kubectl describe smyapp-service
+   26  kubectl describe myapp-service
+   27  kubectl get deployments -n manish-namespace
+   28  kubectl get service -n manish-namespace
+   29  kubectl describe service/myapp-service
+   30  kubectl describe service/nginx-service
+   31  kubectl describe myapp-service
+   32  kubectl describe service/nginx-service -n manish-namespace
+   33  curl myapp-service:80
+   34  vi temp-pod.yaml
+   35  cat temp-pod.yaml 
+   36  kubectl apply -f temp-pod.yaml 
+   37  kubectl get pods 
+   38  kubectl get pods -o wide
+   39  kubectl get pods -o wide -all
+   40  kubectl get pods --all-namespaces
+   41  kubectl exec pod-svc-test -- curl myapp-service:80
+   42  kubectl exec pod-svc-test -- curl myapp-service:8080
+   43  kubectl exec pod-svc-test
+   44  kubectl exec pod-svc-test bash
+   45  kubectl exec --stdin --tty shell-demo -- /bin/bash
+   46  kubectl exec --stdin --tty pod-svc-test -- /bin/bash
+   47  kubectl get pods --all-namespaces
+   48  kubectl exec pod-svc-test -- env
+   49  kubectl exec pod-svc-test -- curl myapp-service:80
+   50  kubectl get service
+   51  kubectl get service --all-namespaces
+   52  kubectl apply -f temp-pod.yaml --namespace manish2-namespace
+   53  kubectl create namespace my-namespace
+   54  kubectl get service --all-namespaces
+   55  kubectl apply -f temp-pod.yaml --namespace my-namespace
+   56  kubectl get service --all-namespaces
+   57  kubectl apply -f temp-pod.yaml --namespace my-namespace
+   58  kubectl get service --all-namespaces
+   59  ll
+   60  vi temp-pod.yaml 
+   61  kubectl apply -f temp-pod.yaml
+   62  kubectl get service --all-namespaces
+   63  kubectl get pods --all-namespaces
+   64  kubectl exec pod-svc-test -- curl myapp-deployment-6f766f679f-jb7jg:80
+   65  kubectl get services
+   66  kubectl get services --all-namespaces
+   67  kubectl describe myapp-service
+   68  kubectl describe service/myapp-service
+   69  kubectl describe myapp-service -n manish-namespace
+   70  kubectl describe service/myapp-service -n manish-namespace
+   71  kubectl get pods --all-namespaces -o wide
+   72  ll
+   73  vi temp-pod.yaml 
+   74  kubectl apply -f temp-pod.yaml 
+   75  kubectl get pods --all-namespaces -o wide
+   76  kubectl exec pod-test -- curl myapp-service:80
+   77  kubectl exec pod-svc-test -- curl myapp-service:80
+   78  kubectl exec pod-test -- curl myapp-service:80
+   79  kubectl get pods --all-namespaces -o wide
+   80  kubectl exec pod-test -- /bin/bash
+   81  kubectl describe pod-test
+   82  kubectl describe pod pod-test
+   83  kubectl get pods 
+   84  ll
+   85  cat temp-pod.yaml 
+   86  cp temp-pod.yaml my-pod.yaml
+   87  vi my-pod.yaml 
+   88  kubectl apply -f my-pod.yaml 
+   89  kubectl get pods 
+   90  kubectl get pods --all-namespaces -o wide
+   91  kubectl exec my-pod -- curl myapp-service:80
+   92  kubectl exec -n manis-namespace my-pod -- curl myapp-service:80
+   93  kubectl exec -n manish-namespace my-pod -- curl myapp-service:80
+   94  history
